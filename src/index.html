@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>Form</title>
+
+    <link rel="stylesheet" href="../src/style.css" />
+
+
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <div class='divbg'>
+        <h3 class='pt-4' style="color:white; text-align: center;">Form Builder</h3>
+        <div class='row rowdiv'>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="jsondata"></div>
+                    </div>
+                    <div class="modal-footer">
+                      
+                      <button type="button" class="btn btn-primary" id="copyjsondata" onclick="copyjsondata(`jsondata`)">Copy Data</button>
+                      
+                    </div>
+                    
+                      
+                  </div>
+                </div>
+              </div>
+              
+            <div class='col-sm-7 dragdiv' ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                <div class="text-center " id="drag">Drag a field from right of a area</div>
+                <div id="formmdiv">
+                    <div class='formdetails' id="addrow">
+                    </div>
+                    <div class='formdetails' id="addrow">
+                    </div>
+                    <div class='formdetails' id="addrow">
+                    </div>
+                    
+                    <div id="saves" style='display:none; float:right'>
+                        <button class="btn btn-primary mr-2" onclick="edithtmlForm()">Edit Html</button>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-4' id="flist" style="display:block" >
+                <div class='formlist' >
+                    <div class='divbottom textfield' onclick="AddForm()">
+                        <div class='divpadding' draggable="true" ondragstart="drag(event,`text`)">
+                            <i class="fa fa-file-text faicon" aria-hidden="true"></i>Text Field
+                        </div>
+                    </div>
+                    <div class='divbottom' onclick="AddTextAreaForm()">
+                        <div class='divpadding' draggable="true" ondragstart="drag(event,`area`)">
+                            <i class="fa fa-area-chart faicon" aria-hidden="true"></i>Text area
+                        </div>
+                    </div>
+                    <div class='divbottom' onclick="AddHeaderForm()">
+                        <div class='divpadding' draggable="true" ondragstart="drag(event,`header`)">
+                            <i class="fa fa-header faicon" aria-hidden="true"></i>Header
+                        </div>
+                    </div>
+                </div>
+                <div class="divModal mt-4">
+                    <div class="modalcontent" id="open" style="display:none">
+                    <div>Are you sure you want to clear all this field?</div>
+                    <div class="d-flex justify-content-end mt-2"><button class="mr-2 btn btn-success" id="yes"  onclick="clearForm(this.id)">Yes</button/>
+                    <button id="open" class="btn btn-danger" onclick="ModalFormCancel(this.id)">No</button/>
+                    </div>
+                    </div>
+                    </div>
+                <div class="d-flex justify-content-end">
+                  
+                    <div id="open" onclick="cleardata(this.id)"><button class="btn btn-danger mr-2">clear</button> </div>
+                    <div onclick="convertjson()" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-success mr-2">[{...}]</button> </div>
+                    <div onclick="saveform()"><button class="btn btn-secondary"> Save</button> </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="../src/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+.divbg{
+    background-image: url("../src/images/img.webp");
+    width: 100%;
+    min-height: 100vh;
+    max-height:max-content;
+
+}
+.rowdiv{
+    width: 100%;
+    padding: 6% 5%;
+}
+.dragdiv{
+    background-color: lightblue;
+    margin-right: 2%;
+    border-radius: 4px;
+    border: 1px dashed grey;
+}
+.formlist{
+    background-color: white;
+    border-radius: 4px;
+    text-align: left;
+    padding: 0;
+    height: max-content;
+}
+.divbottom{
+    border-bottom: 1px solid lightgrey;
+    display:flex;
+}
+.divpadding{
+    cursor:pointer;
+    padding: 2% 6%;
+    width:100%;
+}
+.faicon{
+    margin-right: 3%;
+}
+
+.formdetails{
+    /* background-color: white; */
+    margin: 3%;
+    
+}
+#drag{
+    margin: 7%;
+}
+.textleft{
+    text-align: left;
+    padding:2% 3%;
+    background-color: white;
+    margin-bottom: 2%;
+}
+
+.inputclass{
+    width:100%;
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+}
+.inputclass:focus{
+    outline: none !important;
+}
+.admin{
+background: lightgrey;
+border-radius: 5px;
+width:100%;
+padding: 2%;
+}
+.coldisplay{
+    display:none;
+} 
+ .textleft:hover .coldisplay{
+    display:block;
+}
+.icons{
+    /* border-bottom: 2px solid lightgrey; */
+    margin-top: -15%;
+    /* border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey; */
+    margin-right: -25%;
+    padding: 2% 11%;
+    margin-left: 16%;
+    border-bottom-left-radius: 12px;
+}
+.required-field::before {
+    content: "*";
+    color: red;
+  }
+
+  .deletediv:hover{
+    background-color: red;
+    padding: 0% 7%;
+    color:white;
+  }
+  .editdiv:hover{
+    background-color: skyblue;
+    padding: 0% 7%;
+    color:white;
+  }
+  .adddiv:hover{
+    background-color: green;
+    padding: 0% 7%;
+    color:white;
+  }
+  .divModal{
+      display: flex;
+      justify-content: end;
+      margin-bottom:2%;
+  }
+  .modalcontent{
+      background-color: white;
+      padding:2% 2%;
+      
+  }
+  .divborder{
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+  }
+
+  .closediv{
+    border: 2px solid lightgrey;
+    padding: 1px 4px;
+    border-radius: 4px;
+    cursor:pointer;
+  }
+ 
